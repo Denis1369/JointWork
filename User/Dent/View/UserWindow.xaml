@@ -66,20 +66,6 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-
-                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10" HorizontalAlignment="Stretch">
-                        <TextBlock  Text="Поиск: " VerticalAlignment="Center"/>
-                        <TextBox x:Name="search_tb" Grid.Column="3" Style="{StaticResource RoundedTextBoxStyle}" TextChanged="search_tb_TextChanged" Text="" Width="300" Margin="20, 5"/>
-                        <ComboBox SelectionChanged="servicesType_cb_SelectionChanged" x:Name="servicesType_cb" Style="{StaticResource MaterialDesignComboBox}" Foreground="#FF3D7C65" Width="150" Margin="20, 5"/>
-                        <TextBlock Text="Сортировка: " VerticalAlignment="Center"/>
-                        <ComboBox Grid.Column="1" FontSize="18" x:Name="sort_cb" Grid.Row="0" VerticalAlignment="Center" SelectionChanged="sort_cb_SelectionChanged"  Style="{StaticResource MaterialDesignComboBox}" Foreground="#FF3D7C65">
-                            <ComboBoxItem Content="По умолчанию" IsSelected="True"/>
-                            <ComboBoxItem Content="По названию (А-Я)"/>
-                            <ComboBoxItem Content="По названию (Я-А)"/>
-                            <ComboBoxItem Content="По цене (возрастание)"/>
-                            <ComboBoxItem Content="По цене (убывание)"/>
-                        </ComboBox>
-                    </StackPanel>
                     <ListView x:Name="ListService" Grid.Row="1"
 HorizontalContentAlignment="Stretch"
 ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF3A3A3A">
@@ -101,39 +87,7 @@ ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF3A3A3A">
             </TabItem>
 
             <TabItem Header="Отзывы">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="4*"/>
-                        <ColumnDefinition Width="1.5*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="3.7*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <TextBox Grid.Column="1" Grid.Row="1" PreviewTextInput="textReview_txt_PreviewTextInput" Margin="0 0 20 10" TextWrapping="Wrap" x:Name="textReview_txt"></TextBox>
-
-                    <Button x:Name="publicReview_btn" Grid.Row="1" Grid.Column="2" BorderBrush="Transparent" Margin="0 0 0 10" Content="Опубликовать" HorizontalAlignment="Left" Width="160" VerticalAlignment="Center" Height="50" Click="publicReview_btn_Click">
-                        <Button.Resources>
-                            <Style TargetType="{x:Type Border}">
-                                <Setter Property="CornerRadius" Value="15"/>
-                            </Style>
-                        </Button.Resources>
-                        <Button.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleX="1"/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Button.RenderTransform>
-                    </Button>
-
-                    <ScrollViewer Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Padding="10" HorizontalContentAlignment="Stretch" VerticalScrollBarVisibility="Auto">
-                        <WrapPanel x:Name="ReviewContainer" Grid.ColumnSpan="2" Orientation="Horizontal"/>
-                    </ScrollViewer>
-                </Grid>
+                
             </TabItem>
         </TabControl>
     </Grid>

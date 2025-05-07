@@ -22,37 +22,17 @@ namespace Dent.View
     {
         private List<News> allNews = new List<News>();
         private List<Service> allServices = new List<Service>();
-        private List<ServicesType> servicesTypes;
-        private List<Review> allReview = new List<Review>();
 
         public UserWindow()
         {
             InitializeComponent();
-            LoadTypes();
             LoadNews();
             LoadServices();
-            LoadReviews();
-            servicesType_cb.SelectionChanged += servicesType_cb_SelectionChanged;
+           
 
         }
 
-        private void LoadTypes()
-        {
-            using (var db = new DbDentistry1Context())
-            {
-                try
-                {
-                    servicesTypes = db.ServicesTypes.ToList();
-                    servicesType_cb.ItemsSource = servicesTypes;
-                    servicesType_cb.DisplayMemberPath = "ServicesTypeTitle";
-                    servicesType_cb.SelectedValuePath = "ServicesTypeId";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Ошибка при загрузке типов услуг: {ex.Message}");
-                }
-            }
-        }
+        
 
         private void LoadNews()
         {
@@ -98,99 +78,17 @@ namespace Dent.View
             }
         }
 
-        private void ApplySearchFilters()
-        {
-            if (allServices == null) return;
+        
 
-            var filteredGoods = allServices.AsEnumerable();
-            var search = search_tb.Text;
-            if (!string.IsNullOrWhiteSpace(search))
-            {
-                filteredGoods = filteredGoods.Where(g =>
-                    g.ServicesTitle != null && g.ServicesTitle.Contains(search, StringComparison.OrdinalIgnoreCase));
-            }
-            if (servicesType_cb.SelectedValue != null &&
-        int.TryParse(servicesType_cb.SelectedValue.ToString(), out int selectedTypeId))
-            {
-                filteredGoods = filteredGoods.Where(g => g.ServicesTypeId == selectedTypeId);
-            }
-            var sort = (sort_cb.SelectedItem as ComboBoxItem).Content.ToString();
-            switch (sort)
-            {
-                case "По названию (А-Я)":
-                    filteredGoods = filteredGoods.OrderBy(g => g.ServicesTitle);
-                    break;
-                case "По названию (Я-А)":
-                    filteredGoods = filteredGoods.OrderByDescending(g => g.ServicesTitle);
-                    break;
-                case "По цене (возрастание)":
-                    filteredGoods = filteredGoods.OrderBy(g => g.ServicesPrice);
-                    break;
-                case "По цене (убывание)":
-                    filteredGoods = filteredGoods.OrderByDescending(g => g.ServicesType);
-                    break;
-            }
-            UpdateServicesList(filteredGoods.ToList());
-        }
-
-        private void search_tb_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            ApplySearchFilters();
-        }
-
-        private void sort_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ApplySearchFilters();
-        }
-
-        private void servicesType_cb_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ApplySearchFilters();
-        }
-        public void LoadReviews()
-        {
-            using (var db = new DbDentistry1Context())
-            {
-                allReview = db.Reviews.OrderByDescending(r => r.ReviewsDate).ToList();
-                UpdateTourDisplay(allReview);
-            }
-        }
+        
+        
 
         private void servicesBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void UpdateTourDisplay(List<Review> reviewsToDisplay)
-        {
-            ReviewContainer.Children.Clear();
-            foreach (var review in reviewsToDisplay)
-            {
-                ReviewContainer.Children.Add(new ReviewControl(review));
-            }
-        }
+        
 
-        private void publicReview_btn_Click(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textReview_txt.Text))
-            {
-                MessageBox.Show("Пожалуйста, введите текст отзыва", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-            using (var db = new DbDentistry1Context())
-            {
-                Review review1 = new Review();
-                review1.ReviewsText = textReview_txt.Text;
-                review1.ReviewsDate = DateTime.Now;
-                db.Reviews.Add(review1);
-                db.SaveChanges();
-                LoadReviews();
-                textReview_txt.Text = string.Empty;
-            }
-        }
-
-        private void textReview_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-        }
     }
 }
