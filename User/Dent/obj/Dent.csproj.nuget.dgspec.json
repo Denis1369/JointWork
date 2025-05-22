@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\79174\\Desktop\\JointWork\\User\\Dent\\Dent.csproj": {}
+    "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\Dent.csproj": {}
   },
   "projects": {
-    "C:\\Users\\79174\\Desktop\\JointWork\\User\\Dent\\Dent.csproj": {
+    "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\Dent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\79174\\Desktop\\JointWork\\User\\Dent\\Dent.csproj",
+        "projectUniqueName": "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\Dent.csproj",
         "projectName": "Dent",
-        "projectPath": "C:\\Users\\79174\\Desktop\\JointWork\\User\\Dent\\Dent.csproj",
+        "projectPath": "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\Dent.csproj",
         "packagesPath": "C:\\Users\\79174\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\79174\\Desktop\\JointWork\\User\\Dent\\obj\\",
+        "outputPath": "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

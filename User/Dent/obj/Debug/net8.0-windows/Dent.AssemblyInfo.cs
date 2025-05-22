@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7ae069f5eff73ba1eed41d3359368b584b50239")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4628ac7f42c88bea1ab63689fef6b1f883c5f2cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
