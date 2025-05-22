@@ -68,7 +68,8 @@ namespace Dent.View
         {
             using (var db = new DbDentistry1Context())
             {
-                allNews = db.News.OrderByDescending(n => n.DatePublish).ToList();
+                allNews = db.News.OrderByDescending(n => n.DatePublish).Where(g => g.NewsStatus == "Публикация")
+                    .ToList();
                 UpdateGoodsList(allNews);
             }
         }
