@@ -1,4 +1,5 @@
 ﻿using Dent.Model;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,9 +44,18 @@ namespace Dent.View
                 try
                 {
                     servicesTypes = db.ServicesTypes.ToList();
+
+                    var allServicesItem = new ServicesType
+                    {
+                        ServicesTypeId = 0,
+                        ServicesTypeTitle = "Все услуги"
+                    };
+                    servicesTypes.Insert(0, allServicesItem);
+
                     servicesType_cb.ItemsSource = servicesTypes;
                     servicesType_cb.DisplayMemberPath = "ServicesTypeTitle";
                     servicesType_cb.SelectedValuePath = "ServicesTypeId";
+                    servicesType_cb.SelectedIndex = 0;
                 }
                 catch (Exception ex)
                 {
@@ -110,10 +120,16 @@ namespace Dent.View
                     g.ServicesTitle != null && g.ServicesTitle.Contains(search, StringComparison.OrdinalIgnoreCase));
             }
             if (servicesType_cb.SelectedValue != null &&
-        int.TryParse(servicesType_cb.SelectedValue.ToString(), out int selectedTypeId))
+        int.TryParse(servicesType_cb.SelectedValue.ToString(), out int selectedTypeId) && selectedTypeId != 0)
             {
                 filteredGoods = filteredGoods.Where(g => g.ServicesTypeId == selectedTypeId);
             }
+            /* if(servicesType_cb.SelectedIndex == 0)
+             {
+                 filteredGoods = allServices.AsEnumerable();
+             }*/
+
+
             var sort = (sort_cb.SelectedItem as ComboBoxItem).Content.ToString();
             switch (sort)
             {
@@ -163,10 +179,10 @@ namespace Dent.View
 
         private void UpdateTourDisplay(List<Review> reviewsToDisplay)
         {
-            ReviewContainer.Children.Clear();
+            ReviewContainer.Items.Clear();
             foreach (var review in reviewsToDisplay)
             {
-                ReviewContainer.Children.Add(new ReviewControl(review));
+                ReviewContainer.Items.Add(new ReviewControl(review));
             }
         }
 
@@ -191,6 +207,22 @@ namespace Dent.View
 
         private void textReview_txt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
+        }
+
+        private void textReview_txt_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+
+
+
+            if (textBox.Text != "")
+            {
+                materialDesign: TextFieldAssist.SetUnderlineBrush(textBox, Brushes.Green);
+            }
+            else
+            {
+                materialDesign: TextFieldAssist.SetUnderlineBrush(textBox, Brushes.Red);
+            }
         }
     }
 }
