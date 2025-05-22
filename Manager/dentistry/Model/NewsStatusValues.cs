@@ -8,6 +8,6 @@ namespace dentistry.Model
 {
     public static class NewsStatusValues
     {
-        public static readonly List<string> All = new() { "Ожидание", "Публикация" };
+        public static readonly List<string> All = new() { "Ожидание", "Публикация", "Убрано" };
     }
 }

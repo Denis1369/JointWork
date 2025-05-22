@@ -9,6 +9,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< HEAD
+using MaterialDesignThemes.MahApps;
+using MaterialDesignThemes.Wpf;
+using MaterialDesignThemes.Wpf.Converters;
+using MaterialDesignThemes.Wpf.Transitions;
+=======
+>>>>>>> a013504eb611991b62e6728d0ba1f0bc1db60b46
 using System;
 using System.Diagnostics;
 using System.Windows;

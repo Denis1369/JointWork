@@ -18,8 +18,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="DataInfo" Grid.ColumnSpan="2" Margin="10,10,10,10" HorizontalContentAlignment="Stretch"
-          VerticalAlignment="Top"
-          AutoGenerateColumns="False">
+          VerticalAlignment="Top" IsReadOnly="True"
+          AutoGenerateColumns="False" SelectionMode="Single">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID услуги"
                             Binding="{Binding ServicesId}"

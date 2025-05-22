@@ -8,7 +8,11 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = dentistry
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\Denis\Desktop\Denis1369\JointWork\Manager\dentistry\
+=======
 build_property.ProjectDir = C:\Users\79174\Desktop\проектик\JointWork\Manager\dentistry\
+>>>>>>> a013504eb611991b62e6728d0ba1f0bc1db60b46
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false

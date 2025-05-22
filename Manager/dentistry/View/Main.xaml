@@ -13,7 +13,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="AddNB" VerticalAlignment="Center" Width="190" Content="Добавить новость" HorizontalAlignment="Left" Click="AddNB_Click">
+        <Button x:Name="AddNB" VerticalAlignment="Center" Width="190" Content="Новости" HorizontalAlignment="Left" Click="AddNB_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="12"/>
@@ -28,7 +28,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="AddSB" VerticalAlignment="Center" Width="220" Content="Редактировать услуги" HorizontalAlignment="Center" Click="AddSB_Click">
+        <Button x:Name="AddSB" VerticalAlignment="Center" Width="220" Content="Услуги" HorizontalAlignment="Center" Click="AddSB_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="12"/>
@@ -43,7 +43,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="AddEB" VerticalAlignment="Center" Width="220" Content="Редактировать заявки" HorizontalAlignment="Right" Click="AddEB_Click">
+        <Button x:Name="AddEB" VerticalAlignment="Center" Width="220" Content="Заявки" HorizontalAlignment="Right" Click="AddEB_Click">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="12"/>
