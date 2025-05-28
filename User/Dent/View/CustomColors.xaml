@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="MaterialDesignPrimaryColor">#FF60BA99</Color>
+
+    <Color x:Key="MaterialDesignPrimaryLightColor">#FF8FD6C1</Color>
+    <Color x:Key="MaterialDesignPrimaryDarkColor">#FF3A7D6B</Color>
+
+    <Color x:Key="MaterialDesignSecondaryColor">#FF03DAC6</Color>
+</ResourceDictionary>
