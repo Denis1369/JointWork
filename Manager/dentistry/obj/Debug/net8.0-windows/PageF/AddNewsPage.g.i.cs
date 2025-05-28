@@ -113,7 +113,7 @@ namespace dentistry.PageF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/dentistry;V1.0.0.0;component/pagef/addnewspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/dentistry;component/pagef/addnewspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\PageF\AddNewsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

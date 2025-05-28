@@ -65,7 +65,7 @@ namespace dentistry.PageF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/dentistry;V1.0.0.0;component/pagef/editingpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/dentistry;component/pagef/editingpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\PageF\EditingPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

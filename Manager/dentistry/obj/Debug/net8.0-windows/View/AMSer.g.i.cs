@@ -101,7 +101,7 @@ namespace dentistry.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/dentistry;V1.0.0.0;component/view/amser.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/dentistry;component/view/amser.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\AMSer.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
