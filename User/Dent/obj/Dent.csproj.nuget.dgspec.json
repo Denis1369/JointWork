@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\Dent.csproj": {}
+    "C:\\Users\\Denis\\Desktop\\JointWork\\User\\Dent\\Dent.csproj": {}
   },
   "projects": {
-    "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\Dent.csproj": {
+    "C:\\Users\\Denis\\Desktop\\JointWork\\User\\Dent\\Dent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\Dent.csproj",
+        "projectUniqueName": "C:\\Users\\Denis\\Desktop\\JointWork\\User\\Dent\\Dent.csproj",
         "projectName": "Dent",
-        "projectPath": "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\Dent.csproj",
-        "packagesPath": "C:\\Users\\79174\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\79174\\Desktop\\проектик\\JointWork\\User\\Dent\\obj\\",
+        "projectPath": "C:\\Users\\Denis\\Desktop\\JointWork\\User\\Dent\\Dent.csproj",
+        "packagesPath": "C:\\Users\\Denis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Denis\\Desktop\\JointWork\\User\\Dent\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\79174\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Denis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

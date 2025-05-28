@@ -18,7 +18,7 @@ namespace Dent.Model
         public const string smtpPassword = "dSf6gVFmyVn8KA1S42bZ";
 
 
-        public static void SendMessage(string to, string title, string message)
+        public static bool SendMessage(string to, string title, string message)
         {
             using (SmtpClient smtpClient = new SmtpClient(smtpServer, smtpPort))
             {
@@ -36,14 +36,21 @@ namespace Dent.Model
                     try
                     {
                         smtpClient.Send(mailMessage);
+                        return true;
                     }
-                    catch (SmtpException ex) when (ex.Message.Contains("invalid mailbox"))
+                    catch (SmtpException ex) when (
+                        ex.Message.Contains("invalid mailbox") ||
+                        ex.Message.Contains("Mailbox unavailable") ||
+                        ex.Message.Contains("recipient verification failed")
+                    )
                     {
                         MessageBox.Show($"Ошибка: почта {to} не существует или заблокирована.");
+                        return false;
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show($"Ошибка отправки сообщения: {ex.Message}");
+                        return false;
                     }
                 }
             }

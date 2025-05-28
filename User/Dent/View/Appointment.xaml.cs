@@ -96,9 +96,9 @@ namespace Dent.View
                 db.Entries.Add(en);
                 db.SaveChanges();
                 var qs =  EmailServis.GenerateExpectationEmail(name_tb.Text, resultDateTime);
-                EmailServis.SendMessage(email_tb.Text, qs[0], qs[1]);
-                MessageBox.Show($"Вы оставили заявку на прием на: {resultDateTime}");
-                this.Close();
+                if(EmailServis.SendMessage(email_tb.Text, qs[0], qs[1]))
+                    MessageBox.Show($"Вы оставили заявку на прием на: {resultDateTime}");
+                    this.Close();
             }
         }
 

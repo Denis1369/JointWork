@@ -48,7 +48,7 @@ namespace dentistry.Model
             }
         }
 
-        public static List<string> GenerateExpectationEmail(string? name, DateTime? appointment)
+        public List<string> GenerateExpectationEmail(string? name, DateTime? appointment)
         {
             string formattedDate = appointment.Value.ToString("dd.MM.yyyy");
             string formattedTime = appointment.Value.ToString("HH:mm");

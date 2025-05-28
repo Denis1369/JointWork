@@ -33,6 +33,7 @@
                       IsReadOnly="True"
                       AutoGenerateColumns="False"
                       ItemsSource="{Binding EntriesView}"
+                      SelectionMode="Single"
                       CanUserAddRows="False"
                       materialDesign:DataGridAssist.CellPadding="16">
                 <DataGrid.RowStyle>
