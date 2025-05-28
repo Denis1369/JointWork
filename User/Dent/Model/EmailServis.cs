@@ -37,6 +37,10 @@ namespace Dent.Model
                     {
                         smtpClient.Send(mailMessage);
                     }
+                    catch (SmtpException ex) when (ex.Message.Contains("invalid mailbox"))
+                    {
+                        MessageBox.Show($"Ошибка: почта {to} не существует или заблокирована.");
+                    }
                     catch (Exception ex)
                     {
                         MessageBox.Show($"Ошибка отправки сообщения: {ex.Message}");
@@ -45,7 +49,7 @@ namespace Dent.Model
             }
         }
 
-        public List<string> GenerateExpectationEmail(string? name, DateTime? appointment)
+        public static List<string> GenerateExpectationEmail(string? name, DateTime? appointment)
         {
             string formattedDate = appointment.Value.ToString("dd.MM.yyyy");
             string formattedTime = appointment.Value.ToString("HH:mm");

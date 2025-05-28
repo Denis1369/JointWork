@@ -125,11 +125,6 @@ namespace Dent.View
             {
                 filteredGoods = filteredGoods.Where(g => g.ServicesTypeId == selectedTypeId);
             }
-            /* if(servicesType_cb.SelectedIndex == 0)
-             {
-                 filteredGoods = allServices.AsEnumerable();
-             }*/
-
 
             var sort = (sort_cb.SelectedItem as ComboBoxItem).Content.ToString();
             switch (sort)

@@ -807,3 +807,4 @@ C:\Users\79174\Desktop\проектик\JointWork\User\Dent\obj\Debug\net8.0-win
 C:\Users\79174\Desktop\проектик\JointWork\User\Dent\obj\Debug\net8.0-windows\Dent.pdb
 C:\Users\79174\Desktop\проектик\JointWork\User\Dent\obj\Debug\net8.0-windows\Dent.genruntimeconfig.cache
 C:\Users\79174\Desktop\проектик\JointWork\User\Dent\obj\Debug\net8.0-windows\ref\Dent.dll
+C:\Users\79174\Desktop\проектик\JointWork\User\Dent\obj\Debug\net8.0-windows\View\CustomColors.baml

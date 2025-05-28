@@ -46,7 +46,7 @@
                  materialDesign:HintAssist.Hint="Имя" TextChanged="name_tb_TextChanged" PreviewTextInput="name_tb_PreviewTextInput">
         </TextBox>
         <TextBlock Text="Введите Email:" Grid.Row="3" FontSize="20" VerticalAlignment="Bottom" Margin="10" Foreground="#FF3A3A3A"/>
-        <TextBox x:Name="email_tb" Grid.Row="4" Margin="10" LostFocus="email_tb_LostFocus"
+        <TextBox x:Name="email_tb" Grid.Row="4" Margin="10" LostFocus="email_tb_LostFocus" PreviewTextInput="email_tb_PreviewTextInput"
                  materialDesign:HintAssist.Hint="Email, например: qwerty@mail.ru" TextChanged="email_tb_TextChanged"/>
         <TextBlock Text="Введите дату и время:" Grid.Row="5" VerticalAlignment="Bottom" FontSize="20" Margin="10" Foreground="#FF3A3A3A"/>
         <Grid Grid.Row="6">

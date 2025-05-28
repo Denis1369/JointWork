@@ -23,16 +23,23 @@ namespace Dent.View
     /// </summary>
     public partial class Appointment : Window
     {
-        //private List<Entry> entry = new List<Entry>();
         public Appointment()
         {
             InitializeComponent();
-            datePicker.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1))); // Запретить даты раньше сегодня
+            datePicker.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1)));
+            DateTime maxSelectableDate = DateTime.Today.AddDays(14);
+            datePicker.DisplayDateEnd = maxSelectableDate;
             UpdateBlackoutDates();
         }
 
         private void booking_btn_Click(object sender, RoutedEventArgs e)
         {
+            if (name_tb.Text.Length <= 2)
+            {
+                MessageBox.Show("Имя слишком короткое!", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             if (datePicker.SelectedDate == null)
             {
                 MessageBox.Show("Выберите дату!");
@@ -88,10 +95,8 @@ namespace Dent.View
                 en.EntryStatus = "Ожидание";
                 db.Entries.Add(en);
                 db.SaveChanges();
-                //EmailServis emailServis = new EmailServis();
-                //var list = new List<string>();
-                //list = emailServis.GenerateExpectationEmail(name_tb.Text, resultDateTime);
-                //EmailServis.SendMessage(email_tb.Text, list[0], list[1]);
+                var qs =  EmailServis.GenerateExpectationEmail(name_tb.Text, resultDateTime);
+                EmailServis.SendMessage(email_tb.Text, qs[0], qs[1]);
                 MessageBox.Show($"Вы оставили заявку на прием на: {resultDateTime}");
                 this.Close();
             }
@@ -130,7 +135,7 @@ namespace Dent.View
 
             try
             {
-                var regex = new System.Text.RegularExpressions.Regex(
+                var regex = new Regex(
                     @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
                 return regex.IsMatch(email);
             }
@@ -145,7 +150,7 @@ namespace Dent.View
             var textBox = (TextBox)sender;
             if (!IsValidEmail(textBox.Text))
             {
-                MessageBox.Show("Некорректный email!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Некорректный email!", "Предупреждение", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -153,6 +158,7 @@ namespace Dent.View
         {
             var textBox = (TextBox)sender;
             materialDesign: TextFieldAssist.SetUnderlineBrush(textBox, Brushes.Green);
+            
         }
 
         private void name_tb_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -161,6 +167,11 @@ namespace Dent.View
             {
                 e.Handled = true;
             }
+            if(name_tb.Text.Length >= 20)
+            {
+                e.Handled= true;
+            }
+            
         }
         private void UpdateBlackoutDates()
         {
@@ -194,6 +205,14 @@ namespace Dent.View
             foreach (var holiday in holidays)
             {
                 datePicker.BlackoutDates.Add(new CalendarDateRange(holiday));
+            }
+        }
+
+        private void email_tb_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Regex.IsMatch(e.Text, @"^[a-zA-Z0-9._@-]+$"))
+            {
+                e.Handled = true;
             }
         }
     }
