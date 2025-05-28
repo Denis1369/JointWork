@@ -1,6 +1,6 @@
 Manager/.vs/
 User/.vs/
-Manager/dentistry/bin
-User/dentistry/bin
-Manager/dentistry/obj
-User/dentistry/obj
+Manager/dentistry/bin/
+User/dentistry/bin/
+Manager/dentistry/obj/
+User/dentistry/obj/
