@@ -31,7 +31,7 @@ public partial class DbDentistryContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseMySql(
-        "server=switchyard.proxy.rlwy.net;port=54087;user=root;password=vbtgwytDGdIjdCbXYmpcsUEqyNJMINSw;database=railway",
+        "server=localhost;user=root;password=root;database=db_dentistry",
         ServerVersion.Parse("8.0.40-mysql")
     );
 

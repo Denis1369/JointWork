@@ -38,11 +38,24 @@ namespace dentistry.PageF
 
         private void LoadNews()
         {
-            using var context = new DbDentistryContext();
-            NewsItems.Clear();
-            foreach (var news in context.News.ToList())
+            try
             {
-                NewsItems.Add(news);
+                using var context = new DbDentistryContext();
+                var newsList = context.News
+                    .AsNoTracking()
+                    .OrderByDescending(n => n.DatePublish)
+                    .ToList();
+
+                NewsItems.Clear();
+                foreach (var news in newsList)
+                {
+                    NewsItems.Add(news);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки новостей: {ex.Message}");
             }
         }
 
@@ -123,6 +136,20 @@ namespace dentistry.PageF
             ((Storyboard)Resources["HideAnimation"]).Begin();
             await Task.Delay(300);
             CustomSnackbar.Visibility = Visibility.Collapsed;
+        }
+
+        private void SwitchView_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button btn)
+            {
+                bool isAddView = btn.Tag.ToString() == "Add";
+                GridAddNews.Visibility = isAddView ? Visibility.Visible : Visibility.Collapsed;
+                GridViewNews.Visibility = isAddView ? Visibility.Collapsed : Visibility.Visible;
+
+                if (!isAddView) NewsDataGrid.Items.Refresh();
+                LoadNews();
+                NewsDataGrid.ItemsSource = NewsItems;
+            }
         }
     }
 }

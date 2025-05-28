@@ -8,10 +8,10 @@
     <Compile Update="PageF\AddOrModPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PageF\EditingPage.xaml.cs">
+    <Compile Update="PageF\AMSerControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\AMSer.xaml.cs">
+    <Compile Update="PageF\EditingPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\Main.xaml.cs">

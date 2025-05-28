@@ -16,7 +16,7 @@ public partial class News
 
     public byte[]? NewsImage { get; set; }
 
-    [Column("news_status", TypeName = "enum('Ожидание','Публикация')")]
+    [Column("news_status", TypeName = "enum('Ожидание','Публикация','Убрано')")]
     public string? NewsStatus { get; set; }
 
 
