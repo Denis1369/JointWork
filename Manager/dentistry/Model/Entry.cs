@@ -29,9 +29,6 @@ public partial class Entry
             var list = new List<string>();
             switch (newStatus)
             {
-                case "Ожидание":
-                    list = emailServis.GenerateExpectationEmail(entry.UserName, entry.DateTime);
-                    break;
                 case "Подтвержден":
                     list = emailServis.GenerateConfirmationEmail(entry.UserName, entry.DateTime);
                     break;

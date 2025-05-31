@@ -27,8 +27,9 @@ namespace Dent.View
         {
             InitializeComponent();
             datePicker.BlackoutDates.Add(new CalendarDateRange(DateTime.MinValue, DateTime.Today.AddDays(-1)));
-            DateTime maxSelectableDate = DateTime.Today.AddDays(14);
+            DateTime maxSelectableDate = DateTime.Today.AddDays(15);
             datePicker.DisplayDateEnd = maxSelectableDate;
+            datePicker.DisplayDateStart = DateTime.Today.AddDays(1);
             UpdateBlackoutDates();
         }
 
@@ -94,11 +95,13 @@ namespace Dent.View
                 en.DateTime = resultDateTime;
                 en.EntryStatus = "Ожидание";
                 db.Entries.Add(en);
-                db.SaveChanges();
                 var qs =  EmailServis.GenerateExpectationEmail(name_tb.Text, resultDateTime);
-                EmailServis.SendMessage(email_tb.Text, qs[0], qs[1]);
-                MessageBox.Show($"Вы оставили заявку на прием на: {resultDateTime}");
-                this.Close();
+                if (EmailServis.SendMessage(email_tb.Text, qs[0], qs[1]))
+                {
+                    MessageBox.Show($"Вы оставили заявку на прием на: {resultDateTime}");
+                    db.SaveChanges();
+                    this.Close();
+                }
             }
         }
 

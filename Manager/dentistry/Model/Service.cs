@@ -39,7 +39,7 @@ public partial class Service
                 }
             );
             context.SaveChanges();
-            return "Успешно сохранено";
+            return "Добавлена";
         }
     }
 

@@ -57,7 +57,10 @@ namespace dentistry.PageF
             else
                 result = Service.ModService(_service.ServicesId, TitleT.Text, DescT.Text, PriceT.Text, typeId);
 
-            DialogHost.CloseDialogCommand.Execute(result, this);
+            if (result == "Добавлена" || result == "Изменения сохранены")
+            {
+                DialogHost.CloseDialogCommand.Execute(result, this);
+            }
         }
     }
 }

@@ -190,6 +190,7 @@
                         </DataGridTextColumn.ElementStyle>
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="Дата"
+                                        IsReadOnly="True"
                                         Binding="{Binding DatePublish, StringFormat='dd.MM.yyyy'}"
                                         Width="120"/>
                     <DataGridTemplateColumn Header="Статус" Width="150">

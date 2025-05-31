@@ -30,7 +30,7 @@
         VerticalAlignment="Center"
         Width="180"
         Padding="20">
-            <TextBlock Text="{Binding ServicesPrice, StringFormat='{}Цена: {0}'}" 
+            <TextBlock Text="{Binding ServicesPrice, StringFormat='{}Цена: {0} ₽'}" 
                FontSize="20" Foreground="WhiteSmoke"
                HorizontalAlignment="Center"
                VerticalAlignment="Center"/>

@@ -75,18 +75,18 @@ namespace dentistry.PageF
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
 
-            var imageBytes = ImageBytes; // Берём первое изображение
+            var imageBytes = ImageBytes;
 
             string status = News.AddNews(
                 TitleT.Text,
                 DescT.Text,
-                imageBytes // Передаём массив байтов
+                imageBytes
             );
 
 
             if (status == "Успешно сохранено")
             {
-                ShowSnackbar(status);
+                ShowSnackbar("Добавлена");
                 TitleT.Text = "";
                 DescT.Text = "";
                 ImageBytes = [];
