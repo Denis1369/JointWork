@@ -96,12 +96,18 @@ namespace Dent.View
                 en.EntryStatus = "Ожидание";
                 db.Entries.Add(en);
                 var qs =  EmailServis.GenerateExpectationEmail(name_tb.Text, resultDateTime);
+<<<<<<< HEAD
                 if (EmailServis.SendMessage(email_tb.Text, qs[0], qs[1]))
                 {
                     MessageBox.Show($"Вы оставили заявку на прием на: {resultDateTime}");
                     db.SaveChanges();
                     this.Close();
                 }
+=======
+                if(EmailServis.SendMessage(email_tb.Text, qs[0], qs[1]))
+                    MessageBox.Show($"Вы оставили заявку на прием на: {resultDateTime}");
+                    this.Close();
+>>>>>>> 6b6129c498c100ad415240ddef9953f9c191d46d
             }
         }
 
